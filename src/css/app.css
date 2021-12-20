@@ -1,0 +1,600 @@
+/* Import fonts */
+@import url('../fonts/Roboto.css');
+
+/* Reset and normalize */
+@import url('./normalize.css');
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 20px 30px;
+}
+
+/*
+  Top of the site
+ */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em 4em;
+}
+
+.header-title {
+  font-family: "Times New Roman", sans-serif;
+  font-size: 3.3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 1px #000, -2px -2px 1px #f75c49;
+  color: white;
+}
+
+.header-title:hover {
+  cursor: pointer;
+  text-shadow: 4px 2px 2px #000, -4px -2px 2px #f75c49;
+  color: #eee;
+}
+
+.header-form {
+  font-size: 1em;
+}
+
+.header-form input {
+  font-size: 1em;
+  padding: 0.5em 1em;
+  margin: 1em;
+}
+
+.header button {
+  font-weight: bold;
+  background-color: white;
+  color: #f75c49;
+  border: 2px solid #f75c49;
+  border-radius: 3%;
+  box-shadow: none;
+  padding: 0.7em 1em 0.6em;
+}
+
+#search-button {
+  font-size: 1em;
+}
+
+.filter-button {
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: white;
+  color: #f75c49;
+  border: 2px solid #f75c49;
+  border-radius: 3%;
+  box-shadow: none;
+  padding: 0.5em 0.7em 0.4em;
+  margin-left: 1em;
+}
+
+.add-button {
+  font-size: 1.2em;
+  margin: 1em;
+}
+
+.filter-button:hover {
+  background-color: #f75c49;
+  color: white;
+}
+
+.header button:hover {
+  background-color: #f75c49;
+  color: white;
+}
+
+.header-nav a {
+  color: #f75c49;
+  text-decoration: none;
+  font-size: 1.4em;
+  padding: 1em 1em 1em 0;
+}
+
+.footer-nav a {
+  color: #7abbdb;
+  text-decoration: none;
+  font-size: 1.4em;
+  padding: 1em 1em 1em 0;
+}
+
+/*
+Main sections
+ */
+
+.main hr {
+  color: black;
+  width: 50%;
+  margin: 2em auto;
+  border-top: 2px solid black;
+}
+
+.teachers {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 4em;
+}
+
+/*
+Top teachers
+ */
+
+.filter-by {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.inside-filter {
+  margin-left: 4em;
+}
+
+.inside-filter label {
+  color: #999;
+}
+
+.inside-filter label:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.label-one {
+  padding-right: 0.5em;
+  border-right: 2px dotted #666;
+}
+
+.teacher {
+  margin: 1em;
+}
+
+.teacher img {
+  border-radius: 50%;
+  border: 4px solid #f75c49;
+  width: 160px;
+  height: 160px;
+}
+
+.teacher img:hover {
+  border-color: #cc4836;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.list-star {
+  color: yellow;
+  text-shadow: 1px 1px 0 darkgoldenrod, -1px -1px 0 darkgoldenrod, -1px 1px 0 darkgoldenrod, 1px -1px 0 darkgoldenrod;
+  font-size: 2em;
+  position: absolute;
+  margin-top: 2px;
+  margin-right: auto;
+}
+
+/*
+Statistics
+ */
+
+.statistics table {
+  margin: 2em 5%;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+.statistics thead {
+  border-bottom: 1.5px solid black;
+  font-size: 1.2em;
+}
+
+.statistics td,
+.statistics th {
+  padding: 0.5em;
+}
+
+.statistics td:nth-child(1) {
+  text-align: left;
+  padding-right: 5em;
+  padding-left: 1em;
+}
+
+.statistics tr:nth-child(even) {
+  background-color: #f9f5f9;
+}
+
+.statistics th:nth-child(1) {
+  text-align: left;
+  padding-right: 5em;
+  padding-left: 0.7em;
+}
+
+.statistics th:hover {
+  cursor: pointer;
+  border-bottom: 4px solid black;
+  background-color: #fafafa;
+}
+
+.pages {
+  text-align: left;
+  margin: 2em 5%;
+  width: 90%;
+}
+
+.pages a {
+  color: #548eaa;
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+
+.header-nav a:hover {
+  color: #cc4836;
+}
+
+.footer-nav a:hover {
+  color: #548eaa;
+}
+
+/*
+Favorites
+ */
+
+.favorites .teachers {
+  align-items: center;
+  width: 100%;
+}
+
+.fav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.scroll {
+  font-size: 4em;
+  font-weight: bold;
+  color: #888;
+}
+
+.scroll:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.t-name {
+  font-size: 1.6em;
+  padding: 0.5em;
+}
+
+.t-country {
+  font-size: 1em;
+}
+
+#about {
+  text-align: left;
+}
+
+/*
+Popups
+ */
+
+.popup-back {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+}
+
+.popup-back:target {
+  visibility: visible;
+  backdrop-filter: blur(10px);
+}
+
+.teacher-popup {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px #999, -2px -2px 2px #999;
+  padding: 2em 3em;
+  position: relative;
+  overflow: auto;
+}
+
+/*
+Add teacher form
+ */
+
+#add-teacher .teacher-popup {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 3em;
+  margin: 5% 40%;
+  width: 20%;
+  position: relative;
+  overflow: hidden;
+}
+
+#request {
+  display: flex;
+  flex-direction: column;
+}
+
+#request .label {
+  margin: 0.5em;
+}
+
+#add-teacher label {
+  text-align: left;
+  font-size: 0.8em;
+  padding-top: 0.5em;
+}
+
+#add-teacher h1 {
+  margin: 0 0 0.5em;
+  font-size: 1.5em;
+}
+
+.close {
+  text-decoration: none;
+  font-size: 1.1em;
+  color: black;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.teacher-popup input,
+.teacher-popup select {
+  margin: 0.3em 0;
+}
+
+#form-add,
+#btn-request {
+  font-size: 1em;
+  font-weight: bold;
+  background-color: white;
+  color: #f75c49;
+  border: 2px solid #f75c49;
+  border-radius: 3%;
+  box-shadow: none;
+  padding: 0.7em 1em 0.6em;
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+#btn-request {
+  width: 50%;
+  margin: 1em 25%;
+}
+
+#form-add:hover,
+#btn-request:hover {
+  background-color: #f75c49;
+  color: white;
+}
+
+.singleRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*
+Teacher Info Popup
+ */
+
+#teacher-card-popup,
+#request {
+  width: 40%;
+  margin: 5% 30%;
+}
+
+#teacher-card-popup h1 {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+#teacher-photo {
+  float: left;
+  margin-right: 3em;
+  width: fit-content;
+}
+
+#teacher-photo img {
+  margin: 0;
+  width: 180px;
+  height: 180px;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+#teacher-name {
+  font-size: 1.8em;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0.5em;
+}
+
+#teacher-name h2 {
+  margin-top: 0;
+  padding-top: 0;
+  margin-right: 1em;
+}
+
+.star {
+  color: #fff;
+  margin-left: 0.5em;
+  text-shadow: 1px 1px 0 darkgoldenrod, -1px -1px 0 darkgoldenrod, -1px 1px 0 darkgoldenrod, 1px -1px 0 darkgoldenrod;
+}
+
+#search-option {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.star:hover {
+  cursor: pointer;
+  color: goldenrod;
+}
+
+.comment {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+.comment p {
+  margin-top: 1em;
+}
+
+#info p {
+  margin-top: 1em;
+}
+
+#info p a {
+  text-decoration: none;
+  color: #548eaa;
+}
+
+#map { height: 180px; }
+
+#map-btn {
+  font-size: 1em;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0.5em;
+  color: #548eaa;
+  text-decoration-style: dashed;
+  cursor: pointer;
+}
+
+/*
+#map-container {
+  display: flex;
+  flex-direction: row;
+}
+
+*/
+
+/*
+Other
+ */
+
+.chart-div {
+  width: 450px;
+  margin: 1em 2em;
+  transition: ease all 0.5s;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: fit-content;
+}
+
+.chart-label {
+  font-size: 1.9em;
+}
+
+@media (max-width: 1150px) {
+  .main .teachers {
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  #add-teacher .teacher-popup {
+    margin: 5% 35%;
+    width: 30%;
+  }
+
+  #teacher-card-popup,
+  #request {
+    width: 60%;
+    margin: 5% 20%;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    margin: 1em;
+    flex-direction: column;
+  }
+
+  .main .teachers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #add-teacher .teacher-popup {
+    margin: 5% 30%;
+    width: 40%;
+  }
+
+  #teacher-card-popup,
+  #request {
+    width: 70%;
+    margin: 5% 15%;
+  }
+
+  .chart-div {
+    width: 400px;
+    transition: ease all 0.5s;
+  }
+}
+
+@media (max-width: 768px) {
+  .main .teachers {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+  }
+
+  #info-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #add-teacher .teacher-popup {
+    margin: 5% 25%;
+    width: 50%;
+  }
+
+  .chart-div {
+    width: 300px;
+    transition: ease all 0.5s;
+  }
+}
+
+@media (max-height: 650px) {
+  #add-teacher .teacher-popup {
+    margin-bottom: 20%;
+    margin-top: 3%;
+  }
+
+  #teacher-card-popup,
+  #request {
+    width: 50%;
+    margin: 5% 25%;
+  }
+}
+
+@media (max-height: 450px) {
+  #add-teacher .teacher-popup {
+    width: 30%;
+    margin: 3% 35% 20%;
+  }
+}

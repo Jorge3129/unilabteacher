@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head itemscope itemtype="http://schema.org/WebSite">
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Project</title>
+
+    <link rel="stylesheet" href="./css/app.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<script type="text/javascript" src="../build/app.js">
+</script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+<header>
+    <div class="header">
+        <h1 class="header-title" id="header-title" onclick="window.location.href='#'">Teachinder</h1>
+        <form class="header-form" id="header-form">
+            <select name="search-option" id="search-option">
+                <option class="search-op" value="name">Name</option>
+                <option class="search-op" value="age">Age</option>
+                <option class="search-op" value="note">Note</option>
+            </select>
+            <input type="text" name="name-search" id="name-search" placeholder="Enter value to search">
+            <button id="search-button" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="header">
+        <nav class="header-nav">
+            <a href="#top-teachers">Teachers</a>
+            <a href="#statistics">Statistics</a>
+            <a href="#favorites">Favorites</a>
+            <a href="#about">About</a>
+        </nav>
+        <div class="buttons">
+            <button class="add-button" onclick="window.location.href='#request-back'">Request</button>
+            <button class="add-button" onclick="window.location.href='#add-teacher'">Add teacher</button>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="main top-teachers" id="top-teachers">
+        <hr>
+        <h1>Top Teachers</h1>
+        <form class="filter-by">
+            <div class="inside-filter">
+                Filter by:
+                <label class="label-one" id="country-label">
+                    <input type="checkbox" class="filter" id="country-filter">
+                    Country
+                </label>
+                <label class="label-one" id="age-label">
+                    <input type="checkbox" class="filter" id="age-filter">
+                    Age
+                </label>
+                <label class="label-one" id="gender-label">
+                    <input type="checkbox" class="filter" id="gender-filter">
+                    Gender
+                </label>
+                <label id="favorite-label">
+                    <input type="checkbox" class="filter" id="favorite-filter">
+                    Favorite
+                </label>
+            </div>
+        </form>
+        <ul class="teachers" id="ulTop">
+        </ul>
+    </section>
+
+    <section class="main statistics" id="statistics" data-filtered=50>
+        <hr>
+        <h1>Statistics</h1>
+        <table>
+            <thead>
+            <tr>
+                <th class="theader" data-ascend="true" id="full_name-header">Name</th>
+                <th class="theader" data-ascend="true" id="age-header">Age</th>
+                <th class="theader" data-ascend="true" id="gender-header">Gender</th>
+                <th class="theader" data-ascend="true" id="country-header">Country</th>
+                <th class="theader" data-ascend="true" id="b_date-header">Birthday</th>
+            </tr>
+            </thead>
+            <tbody id="stats-body">
+
+            </tbody>
+        </table>
+        <nav class="pages" id="pages"></nav>
+        <div class="chart-container" id="chart-container">
+            <div class="chart-div" id="chart-div">
+                <h2 class="chart-label">Countries</h2>
+                <canvas id="country-chart" width="100"></canvas>
+            </div>
+            <div class="chart-div" id="chart-div-2">
+                <h2 class="chart-label">Ages</h2>
+                <canvas id="age-chart" width="100"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="main favorites" id="favorites">
+        <hr>
+        <h1>Favorites</h1>
+        <div class="fav-container">
+            <span class="scroll first">〈</span>
+            <ul class="teachers" id="ulFav">
+            </ul>
+            <span class="scroll last">〉</span>
+        </div>
+    </section>
+
+    <section class="main" id="about">
+        <hr>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="header">
+        <nav class="footer-nav">
+            <a href="#top-teachers">Teachers</a>
+            <a href="#statistics">Statistics</a>
+            <a href="#favorites">Favorites</a>
+            <a href="#about">About</a>
+        </nav>
+        <button class="add-button" onclick="window.location.href='#add-teacher'">Add teacher</button>
+    </div>
+</footer>
+
+<section class="popup-back" id="add-teacher">
+    <form class="teacher-popup" id="add-teacher-form" onsubmit="window.location.href='#'">
+        <h1 id="form-heading">Add Teacher</h1>
+        <a class="close" href="#0">&times;</a>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"
+               pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)" placeholder="Enter name"
+               required>
+
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+        </select>
+
+        <label for="city">City</label>
+        <input type="text" id="city" pattern="^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$" name="city"
+               required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone"
+               pattern="\(?[0-9]{3}\)?-?\(?[0-9]{3}\)?-?[0-9]{4}" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"
+               pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" required>
+
+        <div class="singleRow">
+            <div>
+                <label>Sex</label>
+            </div>
+            <div>
+                <label>Male
+                    <input type="radio" name="gender" value="male" id="male" checked>
+                </label>
+                <label>Female
+                    <input type="radio" name="gender" value="female" id="female">
+                </label>
+            </div>
+        </div>
+
+        <div class="singleRow">
+            <div>
+                <label for="color">Background color</label>
+            </div>
+            <input type="color" id="color" name="color" required>
+        </div>
+        <button id="form-add" type="submit">Add</button>
+    </form>
+</section>
+
+<section class="popup-back" id="teacher-card">
+    <div class="teacher-popup" id="teacher-card-popup">
+        <h1>Teacher Info</h1>
+        <a class="close" id="close-info" href="#0">×</a>
+        <div id="info-container">
+            <div id="teacher-photo">
+                <img id="photo-info" src="images/image.jpg" alt="Teacher photo"/>
+            </div>
+            <div id="info">
+                <div id="teacher-name">
+                    <h2 id="name-info">Jack Nicholson</h2>
+                    <span class="star" id="star" content="true">&#9733;</span>
+                </div>
+                <p><span id="city-info">Kharkiv</span>, <span id="country-info">Ukraine</span></p>
+                <p><span id="age-info">23</span>, <span id="sex-info">M</span></p>
+                <p><a id="email-info" href="mailto:jack.nicholson@ukma.edu.ua">jack.nicholson@ukma.edu.ua</a></p>
+                <p id="phone-info">099-907-8967</p>
+            </div>
+            <div class="comment" id="comment-info">
+                <p id="comment-note">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vel aut dolorum facere nemo nihil laborum iste.
+                    Ducimus repudiandae obcaecati animi dolorum quas harum odio aut natus necessitatibus temporibus,
+                    totam
+                    nostrum?
+                </p>
+                <div id="map-container">
+                    <button id="map-btn">toggle map</button>
+                    <div id="map-inside"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="popup-back" id="request-back">
+    <form class="teacher-popup" id="request">
+        <h1 id="request-heading">Request teacher</h1>
+        <a class="close" id="close-req" href="#0">&times;</a>
+        <div id="div-country">
+            <label class="label">
+                <input type="checkbox" id="req-country">
+                Country
+            </label>
+            <select id="req-country-select" name="req-country-select">
+            </select>
+        </div>
+        <div id="div-gender">
+            <label class="label">
+                <input type="checkbox" id="req-gender">
+                Gender
+            </label>
+            <select id="req-gender-select" name="req-gender-select">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <button id="btn-request" type="submit">Request</button>
+    </form>
+</section>
+</body>
+</html>
